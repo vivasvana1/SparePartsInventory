@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ASCII"?><project>
+    	
+    <version>1.0</version>
+    	
+    <configs>
+        		
+        <config default="true" name="Configuration1" category="opl">
+            			
+            <ref name="Spare_parts_inventory_1.mod" type="model">
+			</ref>
+            			
+            <ref name="Spare_parts_inventory_1.dat" type="data">
+			</ref>
+            			
+            <ref name="Spare_parts_inventory_1.ops" type="setting">
+			</ref>
+            		
+        </config>
+        	
+    </configs>
+    	
+
+</project>
