@@ -51,10 +51,25 @@ conda env create -f environment.yml
 conda activate spareparts
 
 # Run the full pipeline
-jupyter lab notebooks/01_data_preparation.ipynb   # ➜ Feature engineering
-jupyter lab notebooks/04_demand_forecasting.ipynb # ➜ Multi-model forecasts
+```bash
+# 1. Data Preparation & Feature Engineering
+jupyter lab notebooks/01_data_preparation.ipynb
+
+# 2. Exploratory Data Analysis
+jupyter lab notebooks/02_exploratory_analysis.ipynb
+
+# 3. Optimization Framework Setup
+jupyter lab notebooks/03_optimization_framework.ipynb
+
+# 4. Advanced Forecasting Engine
+jupyter lab notebooks/04_demand_forecasting.ipynb
+
+# 5. Inventory Optimization
 jupyter lab notebooks/05_inventory_optimization.ipynb
+
+# 6. anyLogistix Simulation Tables
 jupyter lab notebooks/06_anylogistix_simulation_tables.ipynb
+
 ```
 ## 2 Architecture Overview <a id="architecture-overview"></a>
 
@@ -112,22 +127,82 @@ SparePartsInventory/
     └── SpareParts.pbix
 ```
 ## 3 Data Pipeline <a id="data-pipeline"></a>
-```bash
-# 1. Data Preparation & Feature Engineering
-jupyter lab notebooks/01_data_preparation.ipynb
 
-# 2. Exploratory Data Analysis
-jupyter lab notebooks/02_exploratory_analysis.ipynb
+### 📊 Data Pipeline
 
-# 3. Optimization Framework Setup
-jupyter lab notebooks/03_optimization_framework.ipynb
+#### M5 Forecasting Dataset
 
-# 4. Advanced Forecasting Engine
-jupyter lab notebooks/04_demand_forecasting.ipynb
+The project leverages the **M5 Competition dataset** from Walmart—one of the most comprehensive, hierarchical time-series datasets in the supply chain domain—ideal for modeling **intermittent and lumpy demand**.
 
-# 5. Inventory Optimization
-jupyter lab notebooks/05_inventory_optimization.ipynb
+#### 📥 Dataset Access
 
-# 6. anyLogistix Simulation Tables
-jupyter lab notebooks/06_anylogistix_simulation_tables.ipynb
-```
+- **Primary Source**: [Kaggle M5 Competition](https://www.kaggle.com/competitions/m5-forecasting-accuracy)
+- **Mirror**: [Nixtla M5 Dataset](https://github.com/Nixtla/m5-forecasting-data)
+- **Alternative**: [Zenodo M5 Repository](https://zenodo.org/record/3713294)
+
+---
+
+#### 🔄 Data Processing Pipeline
+
+| Stage              | Process                                                     | Output                        |
+|--------------------|-------------------------------------------------------------|-------------------------------|
+| **Ingestion**      | Load 58M daily observations from M5 dataset                 | Raw time-series data          |
+| **Sampling**       | 1% stratified sampling for prototype development            | Memory-efficient dataset      |
+| **Transformation** | Wide → Long format conversion (1,913 time columns)          | Normalized structure          |
+| **Feature Engineering** | 27 calendar-based variables for temporal enrichment     | Enriched predictors           |
+| **Classification** | ADI-CV² grid for demand pattern identification              | Tags for model selection      |
+
+---
+
+####  Advanced Feature Engineering
+
+#####  Calendar Features (27 Variables)
+
+- `event_in_3days`, `event_name_encoded` — *Event anticipation signals*
+- `snap_CA/TX/WI` — *Regional SNAP benefit indicators*
+- `is_working_day`, `payday`, `month_end` — *Economic cycle drivers*
+- `season`, `quarter`, `week_of_month` — *Seasonal trend decomposition*
+
+---
+
+####  Demand Classification (ADI-CV² Framework)
+
+- **ADI (Average Demand Interval)**:  
+  \[
+  ADI = \frac{\text{Total Periods}}{\text{Non-zero Demand Periods}}
+  \]
+
+- **CV² (Squared Coefficient of Variation)**:  
+  \[
+  CV^2 = \left( \frac{\sigma}{\mu} \right)^2
+  \]
+
+| Pattern       | ADI     | CV²     | Recommended Models           |
+|---------------|---------|---------|------------------------------|
+| **Smooth**     | < 1.32  | < 0.49  | ETS, SARIMAX                 |
+| **Erratic**    | < 1.32  | ≥ 0.49  | Prophet, Event-driven        |
+| **Intermittent** | ≥ 1.32 | < 0.49  | Croston, TSB                 |
+| **Lumpy**      | ≥ 1.32 | ≥ 0.49  | TSB, Modified Croston        |
+
+
+## 4 Forecasting Engine <a id="forecasting-engine"></a>
+
+### Forecasting Engine
+
+#### Multi-Model Architecture  
+The forecasting system employs a **sophisticated ensemble approach** with 6 specialized algorithms, each optimized for distinct demand patterns typically observed in spare parts management—ranging from smooth to highly intermittent.
+
+#### Model Portfolio
+
+| Model     | Use Case                          | Strengths                              | Implementation                      |
+|-----------|-----------------------------------|----------------------------------------|-------------------------------------|
+| **TSB**   | Highly intermittent, obsolescence-prone | State-space modeling for intermittent demand | `statsmodels` (custom implementation) |
+| **Croston** | Zero-inflated demand series     | Separate size/interval estimation      | Classical method                    |
+| **Prophet** | High-value, seasonal patterns   | Holiday effects, trend decomposition   | `fbprophet` with custom regressors  |
+| **SARIMAX** | Event-driven, promotional spikes | Handles exogenous variables            | `statsmodels.tsa.statespace`        |
+| **ETS**   | Smooth, predictable demand        | Exponential smoothing family           | `statsmodels.tsa.holtwinters`       |
+| **Ensemble** | Fallback for ambiguous patterns | Robust averaging of forecasts          | Weighted combination of all models  |
+
+> This hybrid system is evaluated using a 3-tiered gating framework: statistical metrics (MAPE, MAE, RMSE), bias tolerance (±10%), and financial impact (cost-based ROI), ensuring selection of the **best-fit model per SKU-demand cluster**.
+
+
