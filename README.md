@@ -21,7 +21,7 @@ A comprehensive, end-to-end solution that fuses state-of-the-art intermittent-de
 
 ---
 
-## 📋 Table of Contents
+##  Table of Contents
 
 1. [Quick Start](#quick-start)
 2. [Architecture Overview](#architecture-overview)
@@ -126,13 +126,15 @@ SparePartsInventory/
 ```
 ## 3. Data Pipeline <a id="data-pipeline"></a>
 
-### 📊 Data Pipeline
+### Data Pipeline
 
 #### M5 Forecasting Dataset
 
 The project leverages the **M5 Competition dataset** from Walmart—one of the most comprehensive, hierarchical time-series datasets in the supply chain domain—ideal for modeling **intermittent and lumpy demand**.
 
-####  Dataset Access
+While the dataset does not natively include spare parts as products, the demand behavior of the items closely mimics that of spare parts. This makes it a highly suitable proxy for spare parts inventory modeling. The product names can be restructured or relabeled to reflect a spare parts context, allowing direct applicability of the framework to aftermarket and service parts supply chains.
+
+#### Dataset Access
 
 - **Primary Source**: [Kaggle M5 Competition](https://www.kaggle.com/competitions/m5-forecasting-accuracy)
 - **Mirror**: [Nixtla M5 Dataset](https://github.com/Nixtla/m5-forecasting-data)
@@ -401,7 +403,7 @@ Quantifies the financial impact of forecasting improvement across the network.
 
 ---
 
-📁 PBIX File: [`SpareParts.pbix`](Power-BI%20Dashboards/SpareParts.pbix)
+>  *PBIX* File: [`SpareParts.pbix`](Power-BI%20Dashboards/SpareParts.pbix)
 
 ## 8. Research Foundations & Further Reading<a id="research-foundations--further-reading"></a>
 ###  Key Themes in Intermittent Demand Forecasting & Spare Parts Inventory Management
