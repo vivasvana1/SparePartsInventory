@@ -358,13 +358,13 @@ These results validate that the **integrated forecasting → optimization → si
 
 ## 7. Power BI Dashboards<a id="power-bi-dashboards"></a>
 
-## 📈 Power BI Dashboards: An Executive Intelligence Suite
+##  Power BI Dashboards: An Executive Intelligence Suite
 
 This suite of three comprehensive Power BI dashboards provides multi-level visibility into the spare parts supply chain, translating complex forecast data and optimization results into actionable intelligence for strategic oversight and operational execution.
 
 ---
 
-### 🔹 Executive KPI Cockpit: Forecast Accuracy & Inventory Overview
+###  Executive KPI Cockpit: Forecast Accuracy & Inventory Overview
 
 This high-level dashboard serves as the central command center, offering a real-time, at-a-glance view of the most critical performance indicators for the entire inventory of 290 SKUs.
 
@@ -373,7 +373,7 @@ This high-level dashboard serves as the central command center, offering a real-
 - **Cost & ROI Insight**: Plots Average Cost Impact vs. MASE and ROI Index (3.56).
 - **Interactive Filters**: Slicers for SKU, ABC Class, City, Demand Pattern, and Strategy.
 
-![Executive KPI Cockpit](Power-BI%20Dashboards/Forecast%20Accuracy%20%26%20Inventory%20Overview%20Dashboard.png)
+![SKU-Level Analytics](Power-BI%20Dashboards/Forecast%20Accuracy%20Deep%20Dive.png)
 
 ---
 
@@ -386,8 +386,7 @@ Built for analysts and inventory managers to diagnose performance breakdowns at 
 - **Risk Alerts**: Identifies 8 high-risk SKUs with MASE > 1.0.
 - **Geographical Errors**: U.S. heatmap of forecast bias hotspots.
 
-![SKU-Level Analytics](Power-BI%20Dashboards/Forecast%20Accuracy%20Deep%20Dive.png)
-
+![Forecast Optimization Summary](Power-BI%20Dashboards/Forecast%20Optimization%20Summary%20Accuracy,%20Confidence%20%26%20ROI.png)
 ---
 
 ### 🔹 Forecast Optimization Summary: Accuracy, Confidence & ROI
@@ -399,7 +398,8 @@ Quantifies the financial impact of forecasting improvement across the network.
 - **Root Cause Tracking**: High-risk SKUs by MASE, fill rate, method, and bias.
 - **Confidence Monitoring**: Forecast confidence intervals with trendlines of MASE, Bias, RMSE over time.
 
-![Forecast Optimization Summary](Power-BI%20Dashboards/Forecast%20Optimization%20Summary%20Accuracy,%20Confidence%20%26%20ROI.png)
+![Executive KPI Cockpit](Power-BI%20Dashboards/Forecast%20Accuracy%20%26%20Inventory%20Overview%20Dashboard.png)
+
 
 ---
 
