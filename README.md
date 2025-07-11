@@ -124,6 +124,8 @@ SparePartsInventory/
     ├── Forecast Optimization Summary Accuracy, Confidence & ROI.png
     └── SpareParts.pbix
 ```
+> ### Note: Due to the large size of the M5 dataset (~58M records), the data preparation step is split into two notebooks. The first converts and samples the raw dataset (01_data_preparation.ipynb), while the second (02_data_preparation.ipynb) performs detailed preprocessing and feature engineering.
+
 ## 3. Data Pipeline <a id="data-pipeline"></a>
 
 ### Data Pipeline
