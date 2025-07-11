@@ -1,0 +1,22 @@
+# Core libraries for data manipulation and scientific computing
+pandas
+numpy
+scikit-learn
+scipy
+
+# Time series forecasting models
+statsmodels
+prophet 
+
+# Optimization library
+pulp
+
+# Visualization and interactive widgets
+matplotlib
+plotly
+ipywidgets
+seaborn
+
+# Jupyter environment for running notebooks
+jupyter
+jupyterlab
