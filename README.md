@@ -142,7 +142,7 @@ The project leverages the **M5 Competition dataset** from Walmart—one of the m
 
 ---
 
-#### 🔄 Data Processing Pipeline
+#### Data Processing Pipeline
 
 | Stage              | Process                                                     | Output                        |
 |--------------------|-------------------------------------------------------------|-------------------------------|
@@ -168,14 +168,15 @@ The project leverages the **M5 Competition dataset** from Walmart—one of the m
 ####  Demand Classification (ADI-CV² Framework)
 
 - **ADI (Average Demand Interval)**:  
-  \[
+  $$
   ADI = \frac{\text{Total Periods}}{\text{Non-zero Demand Periods}}
-  \]
+ $$
 
 - **CV² (Squared Coefficient of Variation)**:  
-  \[
+  $$
   CV^2 = \left( \frac{\sigma}{\mu} \right)^2
-  \]
+  $$
+
 
 | Pattern       | ADI     | CV²     | Recommended Models           |
 |---------------|---------|---------|------------------------------|
