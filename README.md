@@ -55,4 +55,15 @@ jupyter lab notebooks/01_data_preparation.ipynb   # ➜ Feature engineering
 jupyter lab notebooks/04_demand_forecasting.ipynb # ➜ Multi-model forecasts
 jupyter lab notebooks/05_inventory_optimization.ipynb
 jupyter lab notebooks/06_anylogistix_simulation_tables.ipynb
+```
+## 2 Architecture Overview <a id="architecture-overview"></a>
+
+SparePartsInventory/
+├─ notebooks/                   # Six production notebooks
+├─ raw_data/                    # M5 dataset (calendar, sales, prices)
+├─ data/                        # Cleaned & enriched parquet/CSV
+├─ Optimization_models_CPLEX/   # AMPL .mod / .dat / .run
+├─ Anylogistix/                 # ALX simulation models
+├─ Power-BI Dashboards/         # .pbix interactive reports
+└─ All plots/                   # Static visualisations
 
