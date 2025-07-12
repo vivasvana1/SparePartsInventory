@@ -375,7 +375,9 @@ This high-level dashboard serves as the central command center, offering a real-
 - **Cost & ROI Insight**: Plots Average Cost Impact vs. MASE and ROI Index (3.56).
 - **Interactive Filters**: Slicers for SKU, ABC Class, City, Demand Pattern, and Strategy.
 
-![SKU-Level Analytics](Power-BI%20Dashboards/Forecast%20Accuracy%20Deep%20Dive.png)
+![Executive KPI Cockpit](Power-BI%20Dashboards/Forecast%20Accuracy%20%26%20Inventory%20Overview%20Dashboard.png)
+
+
 
 ---
 
@@ -388,7 +390,7 @@ Built for analysts and inventory managers to diagnose performance breakdowns at 
 - **Risk Alerts**: Identifies 8 high-risk SKUs with MASE > 1.0.
 - **Geographical Errors**: U.S. heatmap of forecast bias hotspots.
 
-![Forecast Optimization Summary](Power-BI%20Dashboards/Forecast%20Optimization%20Summary%20Accuracy,%20Confidence%20%26%20ROI.png)
+![SKU-Level Analytics](Power-BI%20Dashboards/Forecast%20Accuracy%20Deep%20Dive.png)
 ---
 
 ###  Forecast Optimization Summary: Accuracy, Confidence & ROI
@@ -400,8 +402,7 @@ Quantifies the financial impact of forecasting improvement across the network.
 - **Root Cause Tracking**: High-risk SKUs by MASE, fill rate, method, and bias.
 - **Confidence Monitoring**: Forecast confidence intervals with trendlines of MASE, Bias, RMSE over time.
 
-![Executive KPI Cockpit](Power-BI%20Dashboards/Forecast%20Accuracy%20%26%20Inventory%20Overview%20Dashboard.png)
-
+![Forecast Optimization Summary](Power-BI%20Dashboards/Forecast%20Optimization%20Summary%20Accuracy,%20Confidence%20%26%20ROI.png)
 
 ---
 
