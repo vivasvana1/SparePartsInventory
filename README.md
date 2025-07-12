@@ -360,13 +360,13 @@ These results validate that the **integrated forecasting → optimization → si
 
 ## 7. Power BI Dashboards<a id="power-bi-dashboards"></a>
 
-##  Power BI Dashboards: An Executive Intelligence Suite
+## Power BI Dashboards: An Executive Intelligence Suite
 
-This suite of three comprehensive Power BI dashboards provides multi-level visibility into the spare parts supply chain, translating complex forecast data and optimization results into actionable intelligence for strategic oversight and operational execution.
+This suite of four comprehensive Power BI dashboards provides multi-level visibility into the spare parts supply chain, translating complex forecast data and optimization results into actionable intelligence for strategic oversight and operational execution.
 
 ---
 
-###  Executive KPI Cockpit: Forecast Accuracy & Inventory Overview
+### Executive KPI Cockpit: Forecast Accuracy & Inventory Overview
 
 This high-level dashboard serves as the central command center, offering a real-time, at-a-glance view of the most critical performance indicators for the entire inventory of 290 SKUs.
 
@@ -377,11 +377,9 @@ This high-level dashboard serves as the central command center, offering a real-
 
 ![Executive KPI Cockpit](Power-BI%20Dashboards/Forecast%20Accuracy%20%26%20Inventory%20Overview%20Dashboard.png)
 
-
-
 ---
 
-###  SKU-Level Analytics: Forecast Accuracy Deep Dive
+### SKU-Level Analytics: Forecast Accuracy Deep Dive
 
 Built for analysts and inventory managers to diagnose performance breakdowns at a granular SKU level.
 
@@ -391,9 +389,10 @@ Built for analysts and inventory managers to diagnose performance breakdowns at 
 - **Geographical Errors**: U.S. heatmap of forecast bias hotspots.
 
 ![SKU-Level Analytics](Power-BI%20Dashboards/Forecast%20Accuracy%20Deep%20Dive.png)
+
 ---
 
-###  Forecast Optimization Summary: Accuracy, Confidence & ROI
+### Forecast Optimization Summary: Accuracy, Confidence & ROI
 
 Quantifies the financial impact of forecasting improvement across the network.
 
@@ -406,7 +405,25 @@ Quantifies the financial impact of forecasting improvement across the network.
 
 ---
 
->  *PBIX* File: [`SpareParts.pbix`](Power-BI%20Dashboards/SpareParts.pbix)
+### Inventory Optimization Effectiveness Dashboard
+
+A business-facing, interactive dashboard built to assess the operational impact of inventory optimization across 290 spare part SKUs.
+
+- **Before vs After Analysis**: All key inventory KPIs compared, including Days of Supply, Holding Cost, Stockout Cost, Service Level, Inventory Turnover, and Total Cost.
+- **Dynamic Visuals**: Gauges, funnels, scatter plots, matrix tables, and bar charts to assess SKU-level shifts.
+- **Service-Level Segmentation**: Highlights turnover variation by service tier, visualizing inventory efficiency trade-offs.
+- **Cost Impact Visualization**: Inventory Value vs Total Cost plotted for before/after clusters.
+- **SKU Drilldown**: Top 5 SKUs by Service Level Improvement.
+- **Full Interactivity**: Filters for SKU, ABC-XYZ Class, Demand Pattern, Region, and Strategy.
+
+![Inventory Optimization Dashboard](Power-BI%20Dashboards/Inventory%20Optimization%20Effectiveness%20Dashboard.png)
+
+---
+
+> **PBIX Files**:  
+> - [`SpareParts.pbix`](Power-BI%20Dashboards/SpareParts.pbix) – Forecasting dashboards  
+> - [`Inventory Optimization Effectiveness Dashboard.pbix`](Power-BI%20Dashboards/Inventory%20Optimization%20Effectiveness%20Dashboard.pbix) – Inventory improvement analysis
+
 
 ## 8. Research Foundations & Further Reading<a id="research-foundations--further-reading"></a>
 ###  Key Themes in Intermittent Demand Forecasting & Spare Parts Inventory Management
